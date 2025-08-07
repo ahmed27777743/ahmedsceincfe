@@ -1,88 +1,60 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>???? ???????</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; background: #f5f5f5; }
-    h1, h2 { color: #333; }
-    .section, .content { background: white; padding: 15px; margin-top: 20px; border-radius: 8px; }
-    button { padding: 8px 12px; margin-top: 10px; }
-    input, textarea { padding: 8px; width: 100%; margin-top: 10px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>منصة التعليم</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 40px;
+            direction: rtl;
+        }
+        .course {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .btn {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .locked {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        iframe, embed {
+            width: 90%;
+            height: 400px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
+    <h1>مرحبًا بك في منصتنا التعليمية</h1>
 
-  <div class="section" id="register">
-    <h1>????? ???? ????</h1>
-    <input type="text" id="name" placeholder="?????">
-    <input type="tel" id="phone" placeholder="??? ??????">
-    <button onclick="sendVerification()">?????</button>
-    <p id="verifyMsg"></p>
-  </div>
+    <div class="course locked" id="section1">
+        <h2>قسم الفيزياء</h2>
+        <p>يرجى تفعيل الاشتراك لفتح هذا القسم.</p>
+        <a class="btn" href="https://wa.me/201008404327" target="_blank">تفعيل الاشتراك عبر واتساب</a>
+    </div>
 
-  <div class="section" id="verifySection" style="display:none;">
-    <h2>????? ??????</h2>
-    <input type="text" id="code" placeholder="???? ??? ???????">
-    <button onclick="verifyCode()">?????</button>
-    <p id="loginMsg"></p>
-  </div>
-
-  <div class="section" id="sections" style="display:none;">
-    <h2>??????? ???????</h2>
-    <div id="courses"></div>
-  </div>
-
-  <div class="content" id="courseContent" style="display:none;">
-    <h2>????? ?????</h2>
-    <h3>??????????</h3>
-    <ul>
-      <li><a href="videos/video1.mp4">????? 1</a></li>
-      <li><a href="videos/video2.mp4">????? 2</a></li>
-    </ul>
-    <h3>???????</h3>
-    <ul>
-      <li><a href="pdfs/lesson1.pdf" target="_blank">??? PDF</a></li>
-    </ul>
-    <h3>???????</h3>
-    <textarea placeholder="???? ?????..."></textarea>
-    <button>?????</button>
-  </div>
-
-<script>
-  function sendVerification() {
-    document.getElementById('verifyMsg').innerText = '?? ????? ??? ??????? ??? ???? (????).';
-    document.getElementById('verifySection').style.display = 'block';
-  }
-
-  function verifyCode() {
-    const code = document.getElementById('code').value;
-    if (code === '123456') {
-      document.getElementById('loginMsg').innerText = '?? ??????? ?????';
-      document.getElementById('sections').style.display = 'block';
-      showCourses();
-    } else {
-      document.getElementById('loginMsg').innerText = '??? ??? ????';
-    }
-  }
-
-  function showCourses() {
-    const container = document.getElementById('courses');
-    const sectionHTML = `
-      <div>
-        <h4>??? ????????</h4>
-        <button onclick="subscribe()">????? ????</button>
-      </div>`;
-    container.innerHTML = sectionHTML;
-  }
-
-  function subscribe() {
-    alert('??? ????? ???????? ??? ??????');
-    window.location.href = 'https://wa.me/201008404327?text=????%20?????%20????????%20??%20??????';
-    document.getElementById('courseContent').style.display = 'block';
-  }
-</script>
-
+    <div class="course locked" id="section2">
+        <h2>قسم الكيمياء</h2>
+        <p>يرجى تفعيل الاشتراك لفتح هذا القسم.</p>
+        <a class="btn" href="https://wa.me/201008404327" target="_blank">تفعيل الاشتراك عبر واتساب</a>
+    </div>
 </body>
 </html>
