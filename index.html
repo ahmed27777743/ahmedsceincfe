@@ -6,61 +6,84 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
             padding: 40px;
             direction: rtl;
+            color: #333;
+        }
+        h1 {
+            color: #00796b;
+            margin-bottom: 30px;
         }
         .course {
-            background-color: white;
-            border-radius: 12px;
+            background: #ffffff;
+            border-radius: 16px;
             padding: 20px;
             margin: 20px auto;
-            max-width: 600px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 700px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .course:hover {
+            transform: scale(1.02);
         }
         h2 {
+            color: #00796b;
             margin-bottom: 10px;
         }
+        .section-content h3 {
+            color: #004d40;
+        }
+        button {
+            background-color: #26a69a;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px 0;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #00897b;
+            transform: scale(1.05);
+        }
         iframe, embed {
-            width: 90%;
+            width: 100%;
             height: 400px;
-            margin: 10px 0;
-        }
-        .section-content {
-            text-align: right;
-            padding: 10px;
-        }
-        .section-content ul {
-            list-style: none;
-            padding: 0;
-        }
-        .section-content li {
-            padding: 5px 0;
-        }
-        a {
-            color: #1a73e8;
-            text-decoration: none;
+            display: none;
+            border: 2px solid #26a69a;
+            border-radius: 8px;
+            margin-top: 10px;
         }
     </style>
+    <script>
+        function toggleDisplay(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
     <h1>مرحبًا بك في منصتنا التعليمية</h1>
 
-    <div class="course" id="section1">
+    <div class="course">
         <h2>قسم الفيزياء</h2>
         <div class="section-content">
             <h3>📺 فيديوهات الشرح</h3>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">فيديو 1</a></li>
-                <li><a href="https://www.youtube.com/watch?v=ysz5S6PUM-U" target="_blank">فيديو 2</a></li>
-            </ul>
+            <button onclick="toggleDisplay('vid1')">فيديو 1</button>
+            <iframe id="vid1" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+
+            <button onclick="toggleDisplay('vid2')">فيديو 2</button>
+            <iframe id="vid2" src="https://www.youtube.com/embed/ysz5S6PUM-U" allowfullscreen></iframe>
 
             <h3>📄 الملازم (PDF)</h3>
-            <ul>
-                <li><a href="https://example.com/m1.pdf" target="_blank">ملزمة الفيزياء 1</a></li>
-                <li><a href="https://example.com/m2.pdf" target="_blank">ملزمة الفيزياء 2</a></li>
-            </ul>
+            <button onclick="toggleDisplay('pdf1')">ملزمة الفيزياء 1</button>
+            <embed id="pdf1" src="https://example.com/m1.pdf" type="application/pdf">
+
+            <button onclick="toggleDisplay('pdf2')">ملزمة الفيزياء 2</button>
+            <embed id="pdf2" src="https://example.com/m2.pdf" type="application/pdf">
 
             <h3>❓أسئلة الطلاب</h3>
             <ul>
@@ -70,20 +93,22 @@
         </div>
     </div>
 
-    <div class="course" id="section2">
+    <div class="course">
         <h2>قسم الكيمياء</h2>
         <div class="section-content">
             <h3>📺 فيديوهات الشرح</h3>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=uMlF7Abj3gU" target="_blank">فيديو 1</a></li>
-                <li><a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank">فيديو 2</a></li>
-            </ul>
+            <button onclick="toggleDisplay('vid3')">فيديو 1</button>
+            <iframe id="vid3" src="https://www.youtube.com/embed/uMlF7Abj3gU" allowfullscreen></iframe>
+
+            <button onclick="toggleDisplay('vid4')">فيديو 2</button>
+            <iframe id="vid4" src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
 
             <h3>📄 الملازم (PDF)</h3>
-            <ul>
-                <li><a href="https://example.com/k1.pdf" target="_blank">ملزمة الكيمياء 1</a></li>
-                <li><a href="https://example.com/k2.pdf" target="_blank">ملزمة الكيمياء 2</a></li>
-            </ul>
+            <button onclick="toggleDisplay('pdf3')">ملزمة الكيمياء 1</button>
+            <embed id="pdf3" src="https://example.com/k1.pdf" type="application/pdf">
+
+            <button onclick="toggleDisplay('pdf4')">ملزمة الكيمياء 2</button>
+            <embed id="pdf4" src="https://example.com/k2.pdf" type="application/pdf">
 
             <h3>❓أسئلة الطلاب</h3>
             <ul>
