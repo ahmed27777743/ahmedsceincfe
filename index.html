@@ -1,121 +1,80 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>منصة التعليم</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-            padding: 40px;
-            direction: rtl;
-            color: #333;
-        }
-        h1 {
-            color: #00796b;
-            margin-bottom: 30px;
-        }
-        .course {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 700px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .course:hover {
-            transform: scale(1.02);
-        }
-        h2 {
-            color: #00796b;
-            margin-bottom: 10px;
-        }
-        .section-content h3 {
-            color: #004d40;
-        }
-        button {
-            background-color: #26a69a;
-            color: white;
-            padding: 10px 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 5px 0;
-            font-size: 16px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        button:hover {
-            background-color: #00897b;
-            transform: scale(1.05);
-        }
-        iframe, embed {
-            width: 100%;
-            height: 400px;
-            display: none;
-            border: 2px solid #26a69a;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-    </style>
-    <script>
-        function toggleDisplay(id) {
-            const element = document.getElementById(id);
-            element.style.display = element.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع الكورسات التعليمية</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://images.unsplash.com/photo-1581092334703-1e7e8f3b94a6') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+    }
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 30px;
+      gap: 20px;
+    }
+    .course {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid #fff;
+      border-radius: 15px;
+      width: 250px;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      text-align: center;
+    }
+    .course:hover {
+      transform: scale(1.05);
+      background-color: rgba(0, 123, 255, 0.3);
+    }
+    .section {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 20px;
+    }
+    iframe, embed {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+    a.button {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    <h1>مرحبًا بك في منصتنا التعليمية</h1>
+  <header>مرحبا بك في موقع الكورسات التعليمية</header>
 
-    <div class="course">
-        <h2>قسم الفيزياء</h2>
-        <div class="section-content">
-            <h3>📺 فيديوهات الشرح</h3>
-            <button onclick="toggleDisplay('vid1')">فيديو 1</button>
-            <iframe id="vid1" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-
-            <button onclick="toggleDisplay('vid2')">فيديو 2</button>
-            <iframe id="vid2" src="https://www.youtube.com/embed/ysz5S6PUM-U" allowfullscreen></iframe>
-
-            <h3>📄 الملازم (PDF)</h3>
-            <button onclick="toggleDisplay('pdf1')">ملزمة الفيزياء 1</button>
-            <embed id="pdf1" src="https://example.com/m1.pdf" type="application/pdf">
-
-            <button onclick="toggleDisplay('pdf2')">ملزمة الفيزياء 2</button>
-            <embed id="pdf2" src="https://example.com/m2.pdf" type="application/pdf">
-
-            <h3>❓أسئلة الطلاب</h3>
-            <ul>
-                <li>ما الفرق بين الكتلة والوزن؟</li>
-                <li>كيف نحسب السرعة المتوسطة؟</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="course">
-        <h2>قسم الكيمياء</h2>
-        <div class="section-content">
-            <h3>📺 فيديوهات الشرح</h3>
-            <button onclick="toggleDisplay('vid3')">فيديو 1</button>
-            <iframe id="vid3" src="https://www.youtube.com/embed/uMlF7Abj3gU" allowfullscreen></iframe>
-
-            <button onclick="toggleDisplay('vid4')">فيديو 2</button>
-            <iframe id="vid4" src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
-
-            <h3>📄 الملازم (PDF)</h3>
-            <button onclick="toggleDisplay('pdf3')">ملزمة الكيمياء 1</button>
-            <embed id="pdf3" src="https://example.com/k1.pdf" type="application/pdf">
-
-            <button onclick="toggleDisplay('pdf4')">ملزمة الكيمياء 2</button>
-            <embed id="pdf4" src="https://example.com/k2.pdf" type="application/pdf">
-
-            <h3>❓أسئلة الطلاب</h3>
-            <ul>
-                <li>ما هو الفرق بين المركب والخليط؟</li>
-                <li>ما المقصود بالرابطة التساهمية؟</li>
-            </ul>
-        </div>
-    </div>
+  <div class="courses">
+    <div class="course" onclick="window.location.href='biology.html'">قسم الأحياء</div>
+    <div class="course" onclick="window.location.href='chemistry.html'">قسم الكيمياء</div>
+    <div class="course" onclick="window.location.href='science.html'">قسم العلوم العامة</div>
+  </div>
 </body>
 </html>
