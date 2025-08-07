@@ -16,21 +16,8 @@
             border-radius: 12px;
             padding: 20px;
             margin: 20px auto;
-            max-width: 500px;
+            max-width: 600px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        .btn {
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            border-radius: 8px;
-        }
-        .locked {
-            opacity: 0.5;
-            pointer-events: none;
         }
         h2 {
             margin-bottom: 10px;
@@ -40,21 +27,70 @@
             height: 400px;
             margin: 10px 0;
         }
+        .section-content {
+            text-align: right;
+            padding: 10px;
+        }
+        .section-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section-content li {
+            padding: 5px 0;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <h1>مرحبًا بك في منصتنا التعليمية</h1>
 
-    <div class="course locked" id="section1">
+    <div class="course" id="section1">
         <h2>قسم الفيزياء</h2>
-        <p>يرجى تفعيل الاشتراك لفتح هذا القسم.</p>
-        <a class="btn" href="https://wa.me/201008404327" target="_blank">تفعيل الاشتراك عبر واتساب</a>
+        <div class="section-content">
+            <h3>📺 فيديوهات الشرح</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">فيديو 1</a></li>
+                <li><a href="https://www.youtube.com/watch?v=ysz5S6PUM-U" target="_blank">فيديو 2</a></li>
+            </ul>
+
+            <h3>📄 الملازم (PDF)</h3>
+            <ul>
+                <li><a href="https://example.com/m1.pdf" target="_blank">ملزمة الفيزياء 1</a></li>
+                <li><a href="https://example.com/m2.pdf" target="_blank">ملزمة الفيزياء 2</a></li>
+            </ul>
+
+            <h3>❓أسئلة الطلاب</h3>
+            <ul>
+                <li>ما الفرق بين الكتلة والوزن؟</li>
+                <li>كيف نحسب السرعة المتوسطة؟</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="course locked" id="section2">
+    <div class="course" id="section2">
         <h2>قسم الكيمياء</h2>
-        <p>يرجى تفعيل الاشتراك لفتح هذا القسم.</p>
-        <a class="btn" href="https://wa.me/201008404327" target="_blank">تفعيل الاشتراك عبر واتساب</a>
+        <div class="section-content">
+            <h3>📺 فيديوهات الشرح</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=uMlF7Abj3gU" target="_blank">فيديو 1</a></li>
+                <li><a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank">فيديو 2</a></li>
+            </ul>
+
+            <h3>📄 الملازم (PDF)</h3>
+            <ul>
+                <li><a href="https://example.com/k1.pdf" target="_blank">ملزمة الكيمياء 1</a></li>
+                <li><a href="https://example.com/k2.pdf" target="_blank">ملزمة الكيمياء 2</a></li>
+            </ul>
+
+            <h3>❓أسئلة الطلاب</h3>
+            <ul>
+                <li>ما هو الفرق بين المركب والخليط؟</li>
+                <li>ما المقصود بالرابطة التساهمية؟</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
